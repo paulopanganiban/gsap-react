@@ -2,6 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import Astro from "../components/Astro";
+import Bella from "../components/Bella";
+import Code from "../components/Code";
+import Hero from "../components/Hero";
+import Hover from "../components/Hover";
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeContainer>
-        <Astro />
+        <Hero />
       </HomeContainer>
     </>
   );
@@ -21,6 +25,7 @@ const Home: NextPage = () => {
 export default Home;
 
 const HomeContainer = styled.div`
+  background-color: var(--bgc);
   display: grid;
   place-items: center;
 `;

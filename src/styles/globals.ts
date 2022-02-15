@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
    font-style: normal;
  } */
 html {
+    --bgc: #E3FDFD;
     --orange: hsl(26, 100%, 55%);
     --pale-orange: hsl(25, 100%, 94%);
 
