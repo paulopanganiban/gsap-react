@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       </Head>
       <HomeContainer>
         <Hero />
+        <h1>test</h1>
       </HomeContainer>
     </>
   );
