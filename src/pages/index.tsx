@@ -1,11 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
-import Astro from "../components/Astro";
-import Bella from "../components/Bella";
-import Code from "../components/Code";
-import Hero from "../components/Hero";
-import Hover from "../components/Hover";
+import Parallax from "../components/Parallax";
 
 const Home: NextPage = () => {
   return (
@@ -16,8 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeContainer>
-        <Hero />
-        <h1>test</h1>
+        <Parallax/>
       </HomeContainer>
     </>
   );

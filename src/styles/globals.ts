@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
- /* @font-face {
-   font-family: "Kumbh Sans";
-   src: url('/static/KumbhSans-Medium.ttf');
+ @font-face {
+   font-family: "Averta";
+   src: url('/fonts/averta.otf');
    font-weight: normal;
    font-style: normal;
- } */
+ }
 html {
     --bgc: #E3FDFD;
     --orange: hsl(26, 100%, 55%);
@@ -21,7 +21,7 @@ html {
     --black: hsl(0, 0%, 0%);
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
-    font-family: --apple-system, 
+    font-family: "Averta",--apple-system, 
     BlinkMacSystemFont, 'Segoe UI', 
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
     'Helvetica Neue', sans-serif; 
