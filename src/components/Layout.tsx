@@ -1,10 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-const Layout = () => {
+import React, { ReactNode } from "react";
+import styled from "styled-components";
+import Header from "./Header";
+type LayoutTypes = {
+  children: ReactNode;
+};
+const Layout = ({ children }: LayoutTypes) => {
   return (
-    <LayoutContainer>Layout</LayoutContainer>
-  )
-}
+    <LayoutContainer>
+      {children}
+    </LayoutContainer>
+  );
+};
 
-export default Layout
-const LayoutContainer = styled.div``
+export default Layout;
+const LayoutContainer = styled.div``;

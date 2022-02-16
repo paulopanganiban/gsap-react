@@ -1,74 +1,71 @@
-/* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
-import { gsap } from "gsap";
-const Hero = () => {
-    const ref = useRef(null)
-    const tl = gsap.timeline({
-        defaults: {
-            opacity: 0,
-            ease: "back"
-        }
-    })
-    const q = gsap.utils.selector(ref)
-    useEffect(() => {
-        tl.from(ref.current, {ease: "bounce"} )
-        .from(q("#creative"), { x: 80, })
-        .from(q("h2"), { x: -80, }, "<")
-        .from(q("p"), { y: 30,}, "-=0.2")
-        .from(q("button"), { y: 30,}, "-=0.4")
-        .from(q("#items > img"), { scale: 0, stagger: 0.1, opacity: 1, 
-            transformOrigin: "50% 50%"}, "-=0.5")
-        .to(q("p"), {text: "typewriter effect with GSAP 3", ease: "power1.in",
-            duration: 2, repeat: -1, yoyo: true, opacity: 1})
-        .to(q("#keyframe"), {
-            repeat: -1, yoyo: true,
-            keyframes: {
-                "50%": {y: -100},
-                "100%": {x: 320, y: 0, ease: "none"}
-            }
-        }, "<")
-    }, [])
-  return (
-    <HeroContainer ref={ref}>
-      <SectionContainer>
-        <h1 id="creative">Creative</h1>
-        <h2>Process</h2>
-        <p>Learn how to find inspiration in the things you love.</p>
-        <button>READ MORE</button>
-        <h1 id="keyframe">Move me with keyframes %</h1>
-      </SectionContainer>
-      <ImagesContainer id="items">
-        <img id="1" src="/z (1).svg" alt="z" />
-        <img id="2" src="/z (2).svg" alt="z" />
-        <img id="3" src="/z (3).svg" alt="z" />
-        <img id="4" src="/z (4).svg" alt="z" />
-        <img id="5" src="/z (5).svg" alt="z" />
-        <h1>test</h1>
-      </ImagesContainer>
-    </HeroContainer>
-  );
-};
+import React from 'react'
+import styled from 'styled-components';
+import { displayFlexAlignItemsCenter } from '../styles';
 
-export default Hero;
-const HeroContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
-const SectionContainer = styled.div`
-  > h1 {
-    line-height: 0;
+const Hero = () => {
+  return (
+    <HeroContainer>
+    <div className="container">
+      <div className="row">
+        <div className="home-text">
+          <p>Hello, I&rsquo;m</p>
+          <h1>pau panganiban</h1>
+          <h2>front end developer</h2>
+        </div>
+        <div className="home-img">
+          <div className="img-box">
+            <img src="/profile-img.png" alt="profile-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </HeroContainer>
+  )
+}
+
+export default Hero
+
+const HeroContainer = styled.section`
+ ${displayFlexAlignItemsCenter};
+ padding: 120px 0;
+ background-color: var(--white-alpha-25);
+ border: 1px solid var(--white-alpha-40);
+ min-height: 90vh;
+ border-radius: 30px;
+  .row {
+    ${displayFlexAlignItemsCenter}
+    flex-wrap: wrap;
   }
-  > button {
-    background-color: pink;
-    border-radius: 5px;
-    border-width: 0;
-    padding: 0.5rem 1rem;
+  .container {
+    width: 100%;
+    padding: 0 40px;
   }
-`;
-const ImagesContainer = styled.div`
-  position: relative;
-  > img {
-    max-width: 200px;
+  .home-text > p {
+    font-size: 1.125rem;
+  }
+  .home-text > h1 {
+    font-size: 3.125rem;
+    text-transform: capitalize;
+  }
+  .home-text > h2 {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+  }
+  .home-text, .home-img {
+    width: 50%;
+    padding: 15px;
+  }
+  .img-box {
+    margin: auto;
+    max-width: 360px;
+    background-color: var(--white-alpha-25);
+    border-radius: 50%;
+    border: 8px solid var(--white-alpha-25);
+  }
+  .img-box > img {
+    max-width: 100%;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 50%;
   }
 `;
