@@ -68,4 +68,19 @@ a {
   padding: 0;
   box-sizing: border-box;
 }
+h1,h2 {
+  font-weight: 600;
+}
+h3,h4,h5,h6 {
+  font-weight: 500;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
 `
