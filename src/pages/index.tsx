@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { About, Hero } from "../components";
-import TabGroup from "../components/X";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +13,6 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <About />
-        <TabGroup/>
       </main>
     </>
   );
