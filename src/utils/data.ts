@@ -56,3 +56,58 @@ facere repudiandae esse officiis voluptas consectetur ex amet.
 Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
 officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
 culpa sit.`
+
+export const education = [
+    {
+        date: '2013-2016',
+        degree: 'bachelor of science ',
+        school: 'malayan colleges laguna',
+        description: `Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
+    officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
+    culpa sit.`,
+    },
+    {
+        date: '2013-2016',
+        degree: 'bachelor of science ',
+        school: 'mapua institute of techonology - makati',
+        description: `Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
+    officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
+    culpa sit.`,
+    },
+    {
+        date: '2013-2016',
+        degree: 'bachelor of science ',
+        school: 'mapua institute of technology - intramuros',
+        description: `Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
+    officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
+    culpa sit.`,
+    },
+]
+
+export const experience = [
+    {
+        date: '2013-2016',
+        company: 'Google',
+        position: 'software engineer intern',
+        description: `Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
+    officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
+    culpa sit.`,
+    },
+    {
+        date: '2013-2016',
+        company: 'microsoft',
+        position: 'front end developer',
+        description: `Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
+    officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
+    culpa sit.`,
+    },
+    {
+        date: '2013-2016',
+        company: 'amazon',
+        position: 'senior software engineer',
+        description: `Sapiente explicabo nobis non fugit perspiciatis vel voluptatum, at
+    officia maxime excepturi ut quos quo assumenda et soluta sunt veniam
+    culpa sit.`,
+    },
+
+]

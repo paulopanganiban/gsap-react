@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { displayFlexAlignItemsCenter } from "../styles";
+import { DisplayFlexAlignItemsCenter, Section } from "../styles";
 
 const Hero = () => {
   return (
@@ -27,22 +27,8 @@ const Hero = () => {
 
 export default Hero;
 
-const HeroContainer = styled.section`
-  backdrop-filter: var(--backdrop-filter-blur);
-  ${displayFlexAlignItemsCenter};
-  padding: 120px 0;
-  background-color: var(--white-alpha-25);
-  border: 1px solid var(--white-alpha-40);
-  min-height: 90vh;
-  border-radius: 30px;
-  .row {
-    ${displayFlexAlignItemsCenter}
-    flex-wrap: wrap;
-  }
-  .container {
-    width: 100%;
-    padding: 0 40px;
-  }
+const HeroContainer = styled(Section)`
+  ${DisplayFlexAlignItemsCenter};
   .home-text > p {
     font-size: 1.125rem;
   }

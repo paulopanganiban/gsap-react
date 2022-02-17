@@ -35,6 +35,7 @@ html {
     'Helvetica Neue', sans-serif; 
 }
 body {
+  background-attachment: fixed;
   padding: 5vh 15px;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
@@ -63,6 +64,10 @@ a {
       text-decoration: underline;
   }
 }
+button {
+  font-family: inherit;
+  user-select: none;
+}
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -82,5 +87,14 @@ h3,h4,h5,h6 {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
+}
+.container {
+  padding: 0 40px;
+  width: 100%;
+}
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 `
