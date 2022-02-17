@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Section } from "../styles";
 import { education, experience } from "../utils/data";
 const Tabs = () => {
   const tabs = ["education", "experience"];
@@ -20,6 +19,7 @@ const Tabs = () => {
           {item}
         </button>
       ))}
+      {/* refactor */}
       {currentTab === tabs[0] && (
         <div className="tab-content" id="education">
           <div className="timeline">
@@ -35,6 +35,7 @@ const Tabs = () => {
           </div>
         </div>
       )}
+       {currentTab === tabs[1] && (
       <div className="tab-content" id="experience">
         <div className="timeline">
           {experience.map(({ company, date, position, description }) => (
@@ -48,6 +49,7 @@ const Tabs = () => {
           ))}
         </div>
       </div>
+        )}
     </TabsContainer>
   );
 };

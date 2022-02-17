@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { Section } from "../styles";
-import { education, experience } from "../utils/data";
+import { Button, Section } from "../styles";
+import { education, experience, skills } from "../utils/data";
 import Tabs from "./Tabs";
 const About = () => {
   const tabs = ["education", "experience"];
   const [isActive, setIsActive] = useState(tabs[0]);
   const [currentTab, setCurrentTab] = useState("education");
   return (
-    <AboutContainer active={isActive === currentTab}>
+    <AboutContainer>
       <div className="container">
         <div className="row">
           <div className="section-title">
@@ -32,18 +32,13 @@ const About = () => {
             </p>
             <h3>skills</h3>
             <div className="skills">
-              <div className="skill-item">HTML</div>
-              <div className="skill-item">JavaScript / TypeScript</div>
-              <div className="skill-item">CSS</div>
-              <div className="skill-item">ReactJS</div>
-              <div className="skill-item">NextJS</div>
-              <div className="skill-item">Google Firebase</div>
-              <div className="skill-item">MongoDB</div>
-              <div className="skill-item">PostgreSQL</div>
-              <div className="skill-item">Adobe Photoshop</div>
-              <div className="skill-item">Adobe Illustrator</div>
+              {skills.map((skill) => (
+                <div className="skill-item" key={skill}>{skill}</div>
+              ))}
             </div>
             <Tabs />
+            <a href="#">download cv</a>
+            <a href="#">contact me</a>
           </div>
         </div>
       </div>
@@ -52,15 +47,8 @@ const About = () => {
 };
 
 export default About;
-type IAboutContainer = {
-  active: boolean;
-};
-const AboutContainer = styled.section<IAboutContainer>`
-  backdrop-filter: var(--backdrop-filter-blur);
-  background-color: var(--white-alpha-25);
-  border: 1px solid var(--white-alpha-40);
-  min-height: 90vh;
-  border-radius: 30px;
+
+const AboutContainer = styled(Section)`
   padding: 80px 0;
   .row {
     align-items: flex-start;
@@ -109,5 +97,8 @@ const AboutContainer = styled.section<IAboutContainer>`
     text-transform: capitalize;
     margin: 0 10px 10px 0;
     border-radius: 20px;
+  }
+  a {
+    ${Button};
   }
 `;

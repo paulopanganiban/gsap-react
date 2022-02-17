@@ -111,3 +111,16 @@ export const experience = [
     },
 
 ]
+
+export const skills = [
+    "HTML",
+    "JavaScript / TypeScript",
+    "CSS",
+    "ReactJS",
+    "NextJS",
+    "Google Firebase",
+    "MongoDB",
+    "PostgreSQL",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+]
