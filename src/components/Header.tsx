@@ -1,24 +1,38 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
+import { gsap } from 'gsap'
 
 const Header = () => {
+  const ref = useRef(null)
+  const q = gsap.utils.selector(ref)
   const { headerIsOpen, toggleHeader } = useContext(HeaderContext);
-  useEffect(() => {}, []);
+  const tl = gsap.timeline({
+    paused: true
+  })
+  useEffect(() => {
+    // tl.fromTo(ref.current, {
+    //   duration: 1,
+    //   opacity: 0,
+    // }, {
+    //   opacity: 1
+    // })
+  }, []);
 
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={ref} className="active">
       <div className="container">
         <div className="row flex-end">
           <button
             className="nav-toggler"
             onClick={() => {
+              tl.restart()
               toggleHeader(!headerIsOpen);
             }}
           >
             <span></span>
           </button>
-          <nav className={`nav ${headerIsOpen && "active"}`}>
+          <nav className={`nav ${headerIsOpen ? 'active' : ''}`}>
             <div className="nav-inner">
               <ul>
                 <li>
