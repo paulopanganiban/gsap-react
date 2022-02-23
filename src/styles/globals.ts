@@ -36,7 +36,7 @@ html {
 }
 body {
   background-attachment: fixed;
-  padding: 5vh 15px;
+  padding: 35px 15px;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   min-height: 100vh;
@@ -55,6 +55,7 @@ body {
 }
 main {
   max-width: var(--max-width);
+  position: relative;
   margin: auto;
 }
 a {
@@ -102,10 +103,5 @@ h3,h4,h5,h6 {
   align-items: center;
   flex-wrap: wrap;
 }
-.active {
-  visibility: visible;
-}
-.inactive {
-  visibility: hidden;
-}
+
 `

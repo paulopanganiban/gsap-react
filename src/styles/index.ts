@@ -15,10 +15,11 @@ export const DisplayFlexAlignItemsCenter = css`
     align-items: center;
 `
 export const Section = styled.section`
+  display: flex;
   backdrop-filter: var(--backdrop-filter-blur);
   background-color: var(--white-alpha-25);
   border: 1px solid var(--white-alpha-40);
-  min-height: 90vh;
+  min-height: calc(100vh - 70px);
   border-radius: 30px;
 `
 export const Button = css`
