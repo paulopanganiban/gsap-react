@@ -5,13 +5,13 @@ import Hamburger from "./Hamburger";
 const Header = () => {
   return (
     <HeaderContainer>
-        <LogoSection>
-          <span>
-            <h3>P</h3>
-          </span>
-          <p>Paulo Panganiban</p>
-        </LogoSection>
-        <Hamburger />
+      <LogoSection>
+        <span>
+          <h3>P</h3>
+        </span>
+        <p>Paulo Panganiban</p>
+      </LogoSection>
+      <Hamburger />
     </HeaderContainer>
   );
 };
@@ -26,19 +26,19 @@ const HeaderContainer = styled.header`
 const LogoSection = styled.section`
   display: flex;
   align-items: center;
-  > span {
+  span {
     display: grid;
     place-items: center;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background-color: var(--light-orchid);
-    > h3 {
+    h3 {
       margin: 0;
       color: #fff;
     }
   }
-  > p {
+  p {
     margin-left: 0.2rem;
     font-weight: bold;
   }

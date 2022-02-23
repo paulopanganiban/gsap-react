@@ -83,6 +83,7 @@ const PortfolioItemDetails = ({
 export default PortfolioItemDetails;
 
 const PortfolioItemDetailsContainer = styled.section`
+  overflow-x: hidden;
   position: fixed;
   left: 0;
   top: 0;
@@ -98,8 +99,13 @@ const PortfolioItemDetailsContainer = styled.section`
     justify-content: center;
   }
   .pp-content {
-    background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,194,225,0.8) 50%, rgba(250,250,250,0.8) 100%);
+    background: rgb(255, 255, 255);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 194, 225, 0.8) 50%,
+      rgba(250, 250, 250, 0.8) 100%
+    );
     padding: 30px;
     border-radius: 30px;
     max-width: 900px;
