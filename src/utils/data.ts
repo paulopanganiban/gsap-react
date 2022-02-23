@@ -124,3 +124,79 @@ export const skills = [
     "Adobe Photoshop",
     "Adobe Illustrator",
 ]
+
+export const portfolio = [
+    {
+        id: 1,
+        imageUrl: '/portfolio/1.jpg',
+        title: 'Education Course Website',
+        description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Asperiores rerum similique reprehenderit corporis aperiam enim
+    possimus suscipit perferendis? Non, rerum.`,
+        dateCreated: '4th of December 2022',
+        technologies: ['NextJS', 'Styled Components', 'Firebase'],
+        role: 'Frontend',
+        domain: 'www.z.com'
+    },
+    {
+        id: 2,
+        imageUrl: '/portfolio/2.jpg',
+        title: 'Education Course Website',
+        description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Asperiores rerum similique reprehenderit corporis aperiam enim
+    possimus suscipit perferendis? Non, rerum.`,
+        dateCreated: '4th of December 2022',
+        technologies: ['NextJS', 'Styled Components', 'Firebase'],
+        role: 'Frontend',
+        domain: 'www.x.com'
+    },
+    {
+        id: 3,
+        imageUrl: '/portfolio/3.jpg',
+        title: 'Education Course Website',
+        description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Asperiores rerum similique reprehenderit corporis aperiam enim
+    possimus suscipit perferendis? Non, rerum.`,
+        dateCreated: '4th of December 2022',
+        technologies: ['NextJS', 'Styled Components', 'Firebase'],
+        role: 'Frontend',
+        domain: 'www.zxc.com'
+    },
+    {
+        id: 4,
+        imageUrl: '/portfolio/4.jpg',
+        title: 'Education Course Website',
+        description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Asperiores rerum similique reprehenderit corporis aperiam enim
+    possimus suscipit perferendis? Non, rerum.`,
+        dateCreated: '4th of December 2022',
+        technologies: ['NextJS', 'Styled Components', 'Firebase'],
+        role: 'Frontend',
+        domain: 'www.domain.com'
+    },
+    {
+        id: 5,
+        imageUrl: '/portfolio/5.jpg',
+        title: 'Education Course Website',
+        description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Asperiores rerum similique reprehenderit corporis aperiam enim
+    possimus suscipit perferendis? Non, rerum.`,
+        dateCreated: '4th of December 2022',
+        technologies: ['NextJS', 'Styled Components', 'Firebase'],
+        role: 'Frontend',
+        domain: 'www.pau.com'
+    },
+    {
+        id: 6,
+        imageUrl: '/portfolio/6.jpg',
+        title: 'Education Course Website',
+        description: ` Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Asperiores rerum similique reprehenderit corporis aperiam enim
+    possimus suscipit perferendis? Non, rerum.`,
+        dateCreated: '4th of December 2022',
+        technologies: ['NextJS', 'Styled Components', 'Firebase'],
+        role: 'Frontend',
+        domain: 'www.swag.com'
+    },
+]
+

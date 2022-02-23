@@ -1,10 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Button, Section } from "../styles";
+import { portfolio } from "../utils/data";
 import PortfolioItemDetails from "./PortfolioItemDetails";
 
+type ActiveObject = {
+  id: number;
+  imageUrl: string;
+  title: string;
+  description: string;
+  dateCreated: string;
+  technologies: string[];
+  role: string;
+  domain: string;
+};
 const Portfolio = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [activeObject, setActiveObject] = useState<ActiveObject>(portfolio[0]);
+
   return (
     <PortfolioContainer>
       <div className="container">
@@ -14,243 +28,32 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="row">
-          {/*  */}
-          <div className="portfolio-item">
-            <div className="portfolio-item-thumbnail">
-              <img src="/portfolio/1.jpg" alt="portfolio thumbnail" />
-            </div>
-            <h3 className="portfolio-item-title">education course website</h3>
-            <button className="view-project-button">view project</button>
-            <div className="portfolio-item-details">
-              <div className="description">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Asperiores rerum similique reprehenderit corporis aperiam enim
-                  possimus suscipit perferendis? Non, rerum.
-                </p>
+          {portfolio.map((item) => (
+            <div className="portfolio-item" key={item.id}>
+              <div className="portfolio-item-thumbnail">
+                <img src={item.imageUrl} alt={item.title} />
               </div>
-              <div className="general-info">
-                <ul>
-                  <li>
-                    Created - <span>4 Dec 2020</span>
-                  </li>
-                  <li>
-                    Technologies used - <span>html, css, reactJS</span>
-                  </li>
-                  <li>
-                    Role - <span>Frontend</span>
-                  </li>
-                  <li>
-                    Website Link -{" "}
-                    <span>
-                      <a href="#" target="_blank">
-                        www.domain.com
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
+              <h3 className="portfolio-item-title">{item.title}</h3>
+              <button
+                className="view-project-button"
+                onClick={() => {
+                  setShowModal(true);
+                  setActiveObject(item);
+                }}
+              >
+                view project
+              </button>
             </div>
-          </div>
-          {/*  */}
-          {/*  */}
-          <div className="portfolio-item">
-            <div className="portfolio-item-thumbnail">
-              <img src="/portfolio/2.jpg" alt="portfolio thumbnail" />
-            </div>
-            <h3 className="portfolio-item-title">education course website</h3>
-            <button className="view-project-button">view project</button>
-            <div className="portfolio-item-details">
-              <div className="description">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Asperiores rerum similique reprehenderit corporis aperiam enim
-                  possimus suscipit perferendis? Non, rerum.
-                </p>
-              </div>
-              <div className="general-info">
-                <ul>
-                  <li>
-                    Created - <span>4 Dec 2020</span>
-                  </li>
-                  <li>
-                    Technologies used - <span>html, css, reactJS</span>
-                  </li>
-                  <li>
-                    Role - <span>Frontend</span>
-                  </li>
-                  <li>
-                    Website Link -{" "}
-                    <span>
-                      <a href="#" target="_blank">
-                        www.domain.com
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/*  */}
-          {/*  */}
-          <div className="portfolio-item">
-            <div className="portfolio-item-thumbnail">
-              <img src="/portfolio/3.jpg" alt="portfolio thumbnail" />
-            </div>
-            <h3 className="portfolio-item-title">education course website</h3>
-            <button className="view-project-button">view project</button>
-            <div className="portfolio-item-details">
-              <div className="description">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Asperiores rerum similique reprehenderit corporis aperiam enim
-                  possimus suscipit perferendis? Non, rerum.
-                </p>
-              </div>
-              <div className="general-info">
-                <ul>
-                  <li>
-                    Created - <span>4 Dec 2020</span>
-                  </li>
-                  <li>
-                    Technologies used - <span>html, css, reactJS</span>
-                  </li>
-                  <li>
-                    Role - <span>Frontend</span>
-                  </li>
-                  <li>
-                    Website Link -{" "}
-                    <span>
-                      <a href="#" target="_blank">
-                        www.domain.com
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/*  */}
-          {/*  */}
-          <div className="portfolio-item">
-            <div className="portfolio-item-thumbnail">
-              <img src="/portfolio/4.jpg" alt="portfolio thumbnail" />
-            </div>
-            <h3 className="portfolio-item-title">education course website</h3>
-            <button className="view-project-button">view project</button>
-            <div className="portfolio-item-details">
-              <div className="description">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Asperiores rerum similique reprehenderit corporis aperiam enim
-                  possimus suscipit perferendis? Non, rerum.
-                </p>
-              </div>
-              <div className="general-info">
-                <ul>
-                  <li>
-                    Created - <span>4 Dec 2020</span>
-                  </li>
-                  <li>
-                    Technologies used - <span>html, css, reactJS</span>
-                  </li>
-                  <li>
-                    Role - <span>Frontend</span>
-                  </li>
-                  <li>
-                    Website Link -{" "}
-                    <span>
-                      <a href="#" target="_blank">
-                        www.domain.com
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/*  */}
-          {/*  */}
-          <div className="portfolio-item">
-            <div className="portfolio-item-thumbnail">
-              <img src="/portfolio/5.jpg" alt="portfolio thumbnail" />
-            </div>
-            <h3 className="portfolio-item-title">education course website</h3>
-            <button className="view-project-button">view project</button>
-            <div className="portfolio-item-details">
-              <div className="description">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Asperiores rerum similique reprehenderit corporis aperiam enim
-                  possimus suscipit perferendis? Non, rerum.
-                </p>
-              </div>
-              <div className="general-info">
-                <ul>
-                  <li>
-                    Created - <span>4 Dec 2020</span>
-                  </li>
-                  <li>
-                    Technologies used - <span>html, css, reactJS</span>
-                  </li>
-                  <li>
-                    Role - <span>Frontend</span>
-                  </li>
-                  <li>
-                    Website Link -{" "}
-                    <span>
-                      <a href="#" target="_blank">
-                        www.domain.com
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/*  */}
-          {/*  */}
-          <div className="portfolio-item">
-            <div className="portfolio-item-thumbnail">
-              <img src="/portfolio/6.jpg" alt="portfolio thumbnail" />
-            </div>
-            <h3 className="portfolio-item-title">education course website</h3>
-            <button className="view-project-button">view project</button>
-            <div className="portfolio-item-details">
-              <div className="description">
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Asperiores rerum similique reprehenderit corporis aperiam enim
-                  possimus suscipit perferendis? Non, rerum.
-                </p>
-              </div>
-              <div className="general-info">
-                <ul>
-                  <li>
-                    Created - <span>4 Dec 2020</span>
-                  </li>
-                  <li>
-                    Technologies used - <span>html, css, reactJS</span>
-                  </li>
-                  <li>
-                    Role - <span>Frontend</span>
-                  </li>
-                  <li>
-                    Website Link -{" "}
-                    <span>
-                      <a href="#" target="_blank">
-                        www.domain.com
-                      </a>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/*  */}
+          ))}
+          {showModal && (
+            <PortfolioItemDetails
+              {...activeObject}
+              showModal={showModal}
+              setShowModal={setShowModal}
+            />
+          )}
         </div>
       </div>
-      <PortfolioItemDetails/>
     </PortfolioContainer>
   );
 };

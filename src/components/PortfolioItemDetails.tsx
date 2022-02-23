@@ -1,45 +1,73 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { Dispatch, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Button } from "../styles";
-const PortfolioItemDetails = () => {
+type PortfolioItemDetails = {
+  id: number;
+  imageUrl: string;
+  title: string;
+  description: string;
+  dateCreated: string;
+  technologies: string[];
+  role: string;
+  domain: string;
+  setShowModal: Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
+};
+const PortfolioItemDetails = ({
+  id,
+  title,
+  description,
+  dateCreated,
+  technologies,
+  role,
+  domain,
+  imageUrl,
+  setShowModal,
+  showModal,
+}: PortfolioItemDetails) => {
+  const modalRef = useRef<null | HTMLDivElement>(null);
+  useEffect(() => {
+    modalRef?.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [showModal]);
   return (
-    <PortfolioItemDetailsContainer>
-      <div className="pp-inner">
+    <PortfolioItemDetailsContainer ref={modalRef}>
+      <div className="pp-inner" key={id}>
         <div className="pp-content">
           <div className="pp-header">
-            <button className="btn pp-close">
+            <button
+              className="btn pp-close"
+              onClick={() => setShowModal(false)}
+            >
               <img src="/icons8-close.svg" alt="close"></img>
             </button>
             <div className="pp-thumbnail">
-              <img src="/portfolio/3.jpg" alt="thumbnail" />
+              <img src={imageUrl} alt={title} />
             </div>
-            <h3>app landing page</h3>
+            <h3>{title}</h3>
           </div>
           <div className="pp-body">
             <div className="description">
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Asperiores rerum similique reprehenderit corporis aperiam enim
-                possimus suscipit perferendis? Non, rerum.
-              </p>
+              <p>{description}</p>
             </div>
             <div className="general-info">
               <ul>
                 <li>
-                  Created - <span>4 Dec 2020</span>
+                  Created - <span>{dateCreated}</span>
                 </li>
                 <li>
-                  Technologies used - <span>html, css, reactJS</span>
+                  Technologies used - <span>{technologies.join(", ")}</span>
                 </li>
                 <li>
-                  Role - <span>Frontend</span>
+                  Role - <span>{role}</span>
                 </li>
                 <li>
                   Website Link -{" "}
                   <span>
                     <a href="#" target="_blank">
-                      www.domain.com
+                      {domain}
                     </a>
                   </span>
                 </li>
@@ -53,9 +81,8 @@ const PortfolioItemDetails = () => {
 };
 
 export default PortfolioItemDetails;
-// portfolio pop up
+
 const PortfolioItemDetailsContainer = styled.section`
-visibility: hidden;
   position: fixed;
   left: 0;
   top: 0;
@@ -77,7 +104,7 @@ visibility: hidden;
     max-width: 900px;
     width: 100%;
     border: 1px solid var(--white-alpha-40);
-    backdrop-filter: var(--backdrop-filter-blue);
+    backdrop-filter: var(--backdrop-filter-blur);
     position: relative;
   }
   .pp-header {
@@ -103,7 +130,7 @@ visibility: hidden;
     top: -40px;
   }
   .description {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .general-info > ul > li {
     margin-bottom: 10px;
@@ -111,11 +138,11 @@ visibility: hidden;
     text-transform: capitalize;
   }
   .general-info > ul > li > span {
-      font-weight: 300;
+    font-weight: 300;
   }
-  .general-info > ul > li > span > a{
-     text-transform: lowercase;
-     color: var(--main-color);
+  .general-info > ul > li > span > a {
+    text-transform: lowercase;
+    color: var(--main-color);
   }
   button {
     ${Button}
