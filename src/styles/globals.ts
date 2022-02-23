@@ -58,13 +58,18 @@ main {
   margin: auto;
 }
 a {
+  cursor: pointer;
   color: inherit;
   text-decoration: none;
   :hover {
       text-decoration: underline;
   }
 }
+ul {
+  list-style: none;
+}
 button {
+  cursor: pointer;
   font-family: inherit;
   user-select: none;
 }
