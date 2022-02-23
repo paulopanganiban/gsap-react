@@ -15,14 +15,10 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Header />
-        {headerIsOpen ? null : (
-          <>
-            <Hero />
-            <About />
-            <Portfolio />
-            <Contact />
-          </>
-        )}
+        <Hero />
+        <About />
+        <Portfolio />
+        <Contact />
       </main>
     </>
   );

@@ -1,38 +1,53 @@
 import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
-import { gsap } from 'gsap'
+import { gsap } from "gsap";
 
 const Header = () => {
-  const ref = useRef(null)
-  const q = gsap.utils.selector(ref)
+  const ref = useRef(null);
+  const q = gsap.utils.selector(ref);
   const { headerIsOpen, toggleHeader } = useContext(HeaderContext);
-  const tl = gsap.timeline({
-    paused: true
-  })
+  const tl = gsap.timeline();
   useEffect(() => {
-    // tl.fromTo(ref.current, {
-    //   duration: 1,
-    //   opacity: 0,
-    // }, {
-    //   opacity: 1
-    // })
-  }, []);
+    tl.from(q(".nav"), {
+      autoAlpha: 0,
+    })
+      .from(
+        q(".nav-item"),
+        {
+          autoAlpha: 0,
+          x: -800,
+          stagger: 0.2,
+          ease: "power3.inOut",
+        },
+        "<"
+      )
+      .to(
+        q(".nav-toggler"),
+        {
+          width: "70px",
+          height: "70px",
+        },
+        "<"
+      );
+
+    tl.reversed(true);
+  }, [q, tl]);
 
   return (
-    <HeaderContainer ref={ref} className="active">
+    <HeaderContainer ref={ref}>
+      <div className="box"></div>
       <div className="container">
         <div className="row flex-end">
           <button
             className="nav-toggler"
             onClick={() => {
-              tl.restart()
-              toggleHeader(!headerIsOpen);
+              tl.reversed(!tl.reversed());
             }}
           >
             <span></span>
           </button>
-          <nav className={`nav ${headerIsOpen ? 'active' : ''}`}>
+          <nav className={`nav`}>
             <div className="nav-inner">
               <ul>
                 <li>
@@ -124,10 +139,10 @@ const HeaderContainer = styled.header`
     width: 100%;
     padding: 35px 15px;
     overflow-y: auto;
-    display: none;
+    /* visibility: hidden;
     &.active {
-      display: block;
-    }
+      visibility: visible;
+    } */
   }
   .nav-inner {
     min-height: calc(100vh - 70px);
