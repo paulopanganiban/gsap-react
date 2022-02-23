@@ -98,7 +98,8 @@ const PortfolioItemDetailsContainer = styled.section`
     justify-content: center;
   }
   .pp-content {
-    background-color: var(--white-alpha-25);
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,194,225,0.8) 50%, rgba(250,250,250,0.8) 100%);
     padding: 30px;
     border-radius: 30px;
     max-width: 900px;
@@ -106,6 +107,7 @@ const PortfolioItemDetailsContainer = styled.section`
     border: 1px solid var(--white-alpha-40);
     backdrop-filter: var(--backdrop-filter-blur);
     position: relative;
+    /* background: linear-gradient(90deg, #ffd5dea4 0%, #d2d9ffb2 100%); */
   }
   .pp-header {
   }
