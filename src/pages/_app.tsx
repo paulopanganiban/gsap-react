@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { TextPlugin } from "gsap/dist/TextPlugin";
 import { gsap } from "gsap";
 import { Layout } from "../components";
+import { HeaderContextProvider } from "../context/HeaderContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyles />
       <Layout>
-        <Component {...pageProps} />
+        <HeaderContextProvider>
+          <Component {...pageProps} />
+        </HeaderContextProvider>
       </Layout>
     </>
   );

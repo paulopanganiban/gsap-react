@@ -1,34 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
+import { HeaderContext } from "../context/HeaderContext";
 
 const Header = () => {
+  const { headerIsOpen, toggleHeader } = useContext(HeaderContext);
+  useEffect(() => {}, []);
 
-  useEffect(() => {
- 
-  }, [])
-  
   return (
     <HeaderContainer>
       <div className="container">
         <div className="row flex-end">
-          <button className="nav-toggler"
-          onClick={() => {}}>
+          <button
+            className="nav-toggler"
+            onClick={() => {
+              toggleHeader(!headerIsOpen);
+            }}
+          >
             <span></span>
           </button>
-          <nav className="nav">
+          <nav className={`nav ${headerIsOpen && "active"}`}>
             <div className="nav-inner">
               <ul>
                 <li>
-                  <a href="#" className="nav-item">home</a>
+                  <a href="#" className="nav-item">
+                    home
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-item">about</a>
+                  <a href="#" className="nav-item">
+                    about
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-item">portfolio</a>
+                  <a href="#" className="nav-item">
+                    portfolio
+                  </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-item">contact</a>
+                  <a href="#" className="nav-item">
+                    contact
+                  </a>
                 </li>
               </ul>
             </div>
@@ -41,12 +52,12 @@ const Header = () => {
 
 export default Header;
 const HeaderContainer = styled.header`
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-z-index: 1;
-padding: 20px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 20px 0 0;
   .flex-end {
     justify-content: flex-end;
   }
@@ -99,7 +110,10 @@ padding: 20px 0 0;
     width: 100%;
     padding: 35px 15px;
     overflow-y: auto;
-    visibility: hidden;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
   .nav-inner {
     min-height: calc(100vh - 70px);
@@ -114,7 +128,7 @@ padding: 20px 0 0;
     align-items: center;
     justify-content: center;
   }
-   li {
+  li {
     text-align: center;
     position: relative;
   }
@@ -123,14 +137,14 @@ padding: 20px 0 0;
     text-transform: capitalize;
     color: var(--blue-dark);
     display: block;
-    font-weight: 600; 
+    font-weight: 600;
     padding: 8px 15px;
     transition: color 0.3s ease;
     &:hover {
       color: var(--main-color);
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       bottom: 0;

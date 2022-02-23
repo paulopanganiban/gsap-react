@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useContext } from "react";
 import { About, Hero, Portfolio, Contact, Header } from "../components";
+import { HeaderContext } from "../context/HeaderContext";
 
 const Home: NextPage = () => {
+  const { headerIsOpen } = useContext(HeaderContext);
   return (
     <>
       <Head>
@@ -11,11 +14,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header/>
-        <Hero />
-        <About />
-        <Portfolio />
-        <Contact />
+        <Header />
+        {headerIsOpen ? null : (
+          <>
+            <Hero />
+            <About />
+            <Portfolio />
+            <Contact />
+          </>
+        )}
       </main>
     </>
   );
