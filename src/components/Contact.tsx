@@ -161,5 +161,10 @@ const ContactContainer = styled(Section)`
     border: 1px solid var(--white-alpha-40);
     color: var(--main-color);
     border-radius: 50%;
+    transition: all 0.3s ease;
+    &:hover {
+      color: var(--white);
+      background-color: var(--main-color);
+    }
   }
 `;
