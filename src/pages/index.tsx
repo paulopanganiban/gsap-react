@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useContext } from "react";
-import { About, Hero, Portfolio, Contact, Header } from "../components";
+import { About, Hero, Portfolio, Contact, Header, Hamburger } from "../components";
 import { HeaderContext } from "../context/HeaderContext";
 
 const Home: NextPage = () => {
@@ -14,6 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {/* <Hamburger /> */}
         <Header />
         <Hero />
         <About />

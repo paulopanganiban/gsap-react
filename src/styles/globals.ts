@@ -23,6 +23,10 @@ html {
     --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
     --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
 
+
+    --primary-color: rgba(13,110,139,0.75);
+    --overlay-color: rgba(13,110,139,0.85);
+    
     --bgc: #E3FDFD;
     --white: hsl(0, 0%, 100%);
     --black: #080808;
